@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
-import { Routes } from '@angular/router';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './core/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: '404',
-    component: ErrorPageComponent
+    path: '',
+    component: HomePageComponent
   },
   {
     path: '**',
-    redirectTo: '404'
+    redirectTo: ''
   }
 ]
 
 @NgModule({
   declarations: [],
   imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class AppRoutingModule { }
