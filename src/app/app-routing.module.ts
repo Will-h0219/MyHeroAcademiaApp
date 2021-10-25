@@ -4,6 +4,10 @@ import { HomePageComponent } from './core/home-page/home-page.component';
 
 const routes: Routes = [
   {
+    path: 'characters',
+    loadChildren: () => import('./core/characters/characters.module').then((m) => m.CharactersModule)
+  },
+  {
     path: '',
     component: HomePageComponent
   },
