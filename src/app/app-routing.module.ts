@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './core/home-page/home-page.component';
+import { WelcomeComponent } from './layout/welcome/welcome.component';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 
 const routes: Routes = [
   {
-    path: 'characters',
-    loadChildren: () => import('./core/characters/characters.module').then((m) => m.CharactersModule)
+    path: '',
+    component: WelcomeComponent,
+    pathMatch: 'full'
   },
   {
-    path: '',
-    component: HomePageComponent
+    path: 'home',
+    component: ContentLayoutComponent,
+    loadChildren: () => import('./modules/home/home.module').then((m) => m.HomePageModule)
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ]
 

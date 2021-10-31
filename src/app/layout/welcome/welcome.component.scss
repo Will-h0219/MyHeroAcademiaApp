@@ -1,0 +1,30 @@
+.container {
+    height: 100vh;
+    background-color: #FFFAA2;
+    padding-top: 30px;
+    .card {
+        max-width: 720px;
+        width: 90%;
+        margin: 0px auto;
+        padding: 20px;
+        background-color: #FFF64D;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 16px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.75);
+        h1 {
+            text-align: center;
+            margin: 0;
+            font-weight: 500;
+        }
+        hr {
+            width: 100%;
+        }
+        img {
+            max-width: 80%;
+            margin: 0px auto;
+        }
+    }
+}
