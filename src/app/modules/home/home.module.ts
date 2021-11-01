@@ -8,6 +8,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SearchComponent } from './pages/search/search.component';
 import { CharacterComponent } from './pages/character/character.component';
 import { CharactersComponent } from './pages/characters/characters.component';
+import { CardComponent } from './components/card/card.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 
 
@@ -15,7 +17,9 @@ import { CharactersComponent } from './pages/characters/characters.component';
   declarations: [
     CharacterComponent,
     CharactersComponent,
-    SearchComponent
+    SearchComponent,
+    CardComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule,

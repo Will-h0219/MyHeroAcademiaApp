@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeaderComponent } from './layout/header/header.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     SharedModule
   ],

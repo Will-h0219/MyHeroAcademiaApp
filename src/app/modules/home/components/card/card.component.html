@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ character.name | cardText }}</mat-card-title>
+    </mat-card-header>
+    <div class="img-container" *ngIf="character">
+        <img mat-card-image [src]="imgUrl" (error)="updateUrl()">
+    </div>
+    <mat-card-content>
+        <p><strong>Name: </strong>{{ character.name | cardText }}</p>
+        <p><strong>Alias: </strong>{{ character.alias | cardText }}</p>
+        <p><strong>Occupation: </strong>{{ character.occupation | cardText }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink]="['/home/character', character.id]">More...</a>
+    </mat-card-actions>
+</mat-card>

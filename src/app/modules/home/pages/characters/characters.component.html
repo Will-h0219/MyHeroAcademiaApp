@@ -1,1 +1,18 @@
-<p>characters works!</p>
+<h1>Characters</h1>
+<mat-divider></mat-divider>
+<br>
+
+<app-api-error *ngIf="displayApiError"></app-api-error>
+
+<div class="list-container" [ngClass.xs]="['mobile']" [ngClass.gt-xs]="['lg-devices']">
+    <div *ngFor="let character of characters">
+        <app-card [character]="character"></app-card>
+    </div>
+</div>
+
+<div class="paginator" *ngIf="!displayApiError">
+    <app-paginator [length]="paginatorLength" (onPageEvent)="getPagination($event)"></app-paginator>
+</div>
+
+
+<app-spinner *ngIf="displaySpinner"></app-spinner>

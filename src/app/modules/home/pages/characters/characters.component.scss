@@ -1,0 +1,24 @@
+h1 {
+    margin: 10px 15px;
+}
+
+.list-container {
+    margin: 0px auto;
+    width: 90%;
+    &.mobile {
+        display: flex;
+        flex-flow: column;
+        gap: 16px;
+    }
+    &.lg-devices {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+        align-content: stretch;
+        justify-content: center;
+    }
+}
+.paginator {
+    display: flex;
+    justify-content: center;
+}
