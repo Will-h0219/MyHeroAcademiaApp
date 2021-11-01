@@ -2,3 +2,7 @@
     max-height: 350px;
     overflow: hidden;
 }
+
+.img-container * {
+    pointer-events: none;
+}
