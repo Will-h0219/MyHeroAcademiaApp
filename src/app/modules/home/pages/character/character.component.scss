@@ -1,0 +1,32 @@
+@import '../../../../../styles/medias.scss';
+
+h1 {
+    margin: 15px 20px;
+}
+
+.mat-divider {
+    margin-bottom: 18px;
+    @include md-screen() {
+        margin-bottom: 26px;
+    }
+}
+
+.related-characters {
+    width: 90%;
+    a.mat-raised-button {
+        margin: 5px;
+        background-color: #636780;
+        color: #fff;
+    }
+}
+.character-info {
+    width: 90%;
+    margin: 0px auto;
+    @include md-screen() {
+        width: 100%;
+    }
+    .mat-icon {
+        font-size: 20px;
+        margin: auto 0px;
+    }
+}

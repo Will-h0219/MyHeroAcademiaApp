@@ -1,1 +1,45 @@
-<p>character works!</p>
+<ng-container *ngIf="!character; else characterVisualizer">
+    <app-spinner></app-spinner>
+</ng-container>
+
+<ng-template #characterVisualizer>
+
+    <h1>{{ character.name }}</h1>
+    <mat-divider></mat-divider>
+    
+    <div fxLayout.xs="column" fxLayout="row" fxLayoutGap="16px">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+            <app-image-slider [images]="character.images"></app-image-slider>
+            
+            <div class="related-characters">
+                <h3><strong>Related characters:</strong></h3>
+                <a mat-raised-button *ngFor="let char of character.family" [routerLink]="[ '/home/character', char.id ]">
+                    {{ char.name }}
+                </a>
+            </div>
+        </div>
+
+        <div fxFlex="50" fxLayout="column" class="character-info">
+            <h3><strong>Name:</strong></h3>
+            <p>{{ character.name | cardText }}</p>
+            <h3><strong>Alias:</strong></h3>
+            <p>{{ character.alias | cardText }}</p>
+            <h3><strong>Bloodtype:</strong></h3>
+            <p>{{ character.bloodtype | cardText }}</p>
+            <h3><strong>Quirk:</strong></h3>
+            <p>{{ character.quirk | cardText }}</p>
+            <h3><strong>Affiliation:</strong></h3>
+            <p>{{ character.affiliation | cardText }}</p>
+            <h3><strong>Description:</strong></h3>
+            <p>{{ character.description | cardText }}</p>
+
+            <div *ngIf="editable">
+                <a mat-raised-button color="primary">
+                    Edit
+                    <mat-icon>edit</mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</ng-template>

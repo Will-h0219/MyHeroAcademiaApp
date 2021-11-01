@@ -10,6 +10,7 @@ import { CharacterComponent } from './pages/character/character.component';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { CardComponent } from './components/card/card.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 
 
@@ -19,7 +20,8 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     CharactersComponent,
     SearchComponent,
     CardComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    ImageSliderComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,11 @@
+<div class="image-slider">
+    <div class="image-container">
+        <img [src]="currentImg" (error)="updateUrl()">
+    </div>
+    <button *ngIf="images.length > 1" mat-mini-fab class="left" (click)="previousImage()">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button *ngIf="images.length > 1" mat-mini-fab class="right" (click)="nextImage()">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+</div>

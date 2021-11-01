@@ -32,6 +32,7 @@ export interface Character {
     epithet:     null | string;
     ages:        Age[] | null;
     family:      Family[] | null;
+    custom?:     boolean | null;
 }
 
 export interface Age {

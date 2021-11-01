@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MhaAPIResponse } from '../interfaces/characters.interface';
+import { MhaAPIResponse, Character } from '../interfaces/characters.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class CharactersService {
       ? this.http.get<MhaAPIResponse>(`${this.baseUrl}/character?page=${page}`)
       : this.http.get<MhaAPIResponse>(`${this.baseUrl}/character`);
     return results;
+  }
+
+  getCharacterById(id: string): Observable<Character> {
+    return this.http.get<Character>(`${this.baseUrl}/character/${id}`);
   }
 }
