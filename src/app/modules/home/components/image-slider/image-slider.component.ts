@@ -1,4 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+import { MatSnackBar, MatSnackBarVerticalPosition } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-image-slider',
@@ -10,7 +11,11 @@ export class ImageSliderComponent {
   @Input() images: string[] = [];
   currentImg: string = '';
 
-  constructor() { }
+  // SnakBar
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  duration: number = 2;
+
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.images.length !== 0) {
@@ -36,7 +41,7 @@ export class ImageSliderComponent {
     if (currentIdx !== this.images.length - 1) {
       this.currentImg = this.images[currentIdx + 1];
     } else {
-      console.log('no more images')
+      this.openSnackBar('No more images available');
     }
   }
 
@@ -45,8 +50,15 @@ export class ImageSliderComponent {
     if (currentIdx !== 0) {
       this.currentImg = this.images[currentIdx - 1];
     } else {
-      console.log('no more images')
+      this.openSnackBar('No more images available');
     }
+  }
+
+  openSnackBar(message: string) {
+    this.snackBar.open(message, 'Ok', {
+      duration: this.duration * 1000,
+      verticalPosition: this.verticalPosition
+    });
   }
 
 }
