@@ -27,7 +27,7 @@ export class HeaderComponent {
     {
       title: 'Login',
       icon: 'login',
-      route: '/home'
+      route: '/auth/login'
     }
   ]
 
