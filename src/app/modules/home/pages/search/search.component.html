@@ -1,1 +1,13 @@
-<p>search works!</p>
+<h1>Looking for a specific character?</h1>
+<mat-divider></mat-divider>
+
+<div fxLayout="column" fxLayoutAlign="center center" class="main">
+    <app-search-input (onSubmit)="buscar($event)"></app-search-input>
+</div>
+<mat-divider></mat-divider>
+
+<div class="characters">
+    <div *ngFor="let character of characters">
+        <app-card [character]="character"></app-card>
+    </div>
+</div>

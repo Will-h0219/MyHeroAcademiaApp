@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MhaAPIResponse, Character } from '../interfaces/characters.interface';
+import { SearchParams } from '../interfaces/search.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class CharactersService {
 
   getCharacterById(id: string): Observable<Character> {
     return this.http.get<Character>(`${this.baseUrl}/character/${id}`);
+  }
+
+  filteredCharacters(filters: string): Observable<MhaAPIResponse> {
+    return this.http.get<MhaAPIResponse>(`${this.baseUrl}/character?${filters}`);
   }
 }

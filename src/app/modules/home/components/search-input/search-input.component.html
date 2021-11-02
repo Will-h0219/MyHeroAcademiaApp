@@ -1,0 +1,55 @@
+<form autocomplete="off" (ngSubmit)=buscar()>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="main-parameter">
+        <mat-form-field appearance="fill">
+            <mat-label>Search by name</mat-label>
+            <input matInput name="name" [(ngModel)]="searchParams.name">
+        </mat-form-field>
+
+        <button type="submit" mat-mini-fab color="primary">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+
+    <mat-accordion class="advanced-options" multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Advanced search options</mat-panel-title>
+                <mat-panel-description>
+                    <mat-icon>
+                        settings
+                    </mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div fxLayout="column">
+                <div fxLayout="column" fxLayout.gt-xs="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Alias</mat-label>
+                        <input matInput name="alias" [(ngModel)]="searchParams.alias">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Quirk</mat-label>
+                        <input matInput name="quirk" [(ngModel)]="searchParams.quirk">
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="column" fxLayout.gt-xs="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Occupation</mat-label>
+                        <input matInput name="occupation" [(ngModel)]="searchParams.occupation">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Affiliation</mat-label>
+                        <input matInput name="affiliation" [(ngModel)]="searchParams.affiliation">
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+</form>

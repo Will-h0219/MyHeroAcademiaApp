@@ -1,0 +1,21 @@
+.main-parameter {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 20px;
+    .mat-form-field {
+        width: 80%;
+    }
+    .mat-mini-fab {
+        margin-left: auto;
+        margin-bottom: 19px;
+    }
+}
+
+.advanced-options {
+    .mat-expansion-panel-header-description {
+        justify-content: flex-end;
+    }
+    .mat-form-field {
+        margin: 0px 10px;
+    }
+}

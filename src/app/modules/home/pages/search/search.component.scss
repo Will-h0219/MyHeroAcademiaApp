@@ -1,0 +1,32 @@
+@import '../../../../../styles/medias.scss';
+
+h1 {
+    margin: 14px 20px;
+}
+
+.main {
+    width: 90%;
+    margin: 0px auto 20px;
+    @include md-screen() {
+        width: 80%;
+    }
+    @include lg-screen() {
+        max-width: 1440px;
+    }
+}
+
+.characters {
+    width: 90%;
+    margin: 24px auto 0px;
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+    @include sm-screen() {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include md-screen() {
+        width: 80%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}

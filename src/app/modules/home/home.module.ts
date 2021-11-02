@@ -11,6 +11,8 @@ import { CharactersComponent } from './pages/characters/characters.component';
 import { CardComponent } from './components/card/card.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { FormsModule } from '@angular/forms';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 
 
@@ -21,11 +23,13 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     SearchComponent,
     CardComponent,
     PaginatorComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    SearchInputComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     SharedModule,
     RouterModule,
     HomeRoutingModule
