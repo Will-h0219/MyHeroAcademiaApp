@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="container">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <h2>Are you a registered user?</h2>
+        <mat-divider></mat-divider>
+    </div>
+
+    <form autocomplete="off" (ngSubmit)="login()">
+
+        <div fxLayout="column">
+            <mat-form-field>
+                <mat-label>email</mat-label>
+                <input type="email" name="userEmail" autocomplete="off" matInput required [(ngModel)]="auth.userEmail">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>password</mat-label>
+                <input type="password" name="userPassword" autocomplete="off" matInput required [(ngModel)]="auth.userPassword">
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="16px">
+            <button fxFlex="50" mat-raised-button type="submit">
+                Login
+            </button>
+            <a fxFlex="50" mat-raised-button>
+                Create an account
+            </a>
+        </div>
+    </form>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <a href="javascript:void(0)">Forgot your password?</a>
+    </div>
+</div>
