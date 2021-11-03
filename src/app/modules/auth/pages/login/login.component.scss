@@ -1,23 +1,23 @@
 @import '../../../../../styles/medias.scss';
 
 :host {
-    background: #fffeec;
-    background-image: url(../../../../../assets/images/all_might_sillhouette.png);
-    background-size: 50%;
-    background-position-x: -50%;
+    background-image: url('../../../../../assets/images/all_might_sillhouette.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto;
     width: 100%;
     height: calc(100% - 56px);
     display: block;
     position: relative;
     @include md-screen() {
-        background-size: 25%;
+        background-position: bottom right;
         height: calc(100% - 64px);
     }
 }
 
 .container {
     background-color: #fff;
-    width: 85%;
+    width: 80%;
     max-width: 480px;
     height: max-content;
     padding: 20px;
