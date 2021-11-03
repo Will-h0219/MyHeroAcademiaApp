@@ -13,6 +13,7 @@ export class CharacterComponent implements OnInit {
 
   character!: Character;
   editable: boolean = false;
+  headerClass: string = "header";
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,6 +28,11 @@ export class CharacterComponent implements OnInit {
       console.log(character);
       this.character = character;
       this.editable = character.custom!;
+      if (character.occupation?.match(/hero|student/i)) {
+        this.headerClass = 'header heroes';
+      } else if (character.occupation?.match(/villain/i)) {
+        this.headerClass = 'header villains';
+      }
     });
   }
 
